@@ -24,16 +24,32 @@ public class TaskHandler {
         }
     }
 
+    /**
+     * Create and add a Task to the list of Tasks tasks.
+     * @param description Description of the Task.
+     * @throws IOException Thrown if any problem occur while saving to file.
+     */
     public void addTask(String description) throws IOException {
         tasks.add(new Task(description));
         TaskJsonWriter.write(tasks, filepath);
     }
 
+    /**
+     * Search and deletes a Task by id from the list of Tasks.
+     * @param id Id of the Task.
+     * @throws IOException Thrown if any problem occur while saving to file.
+     */
     public void removeTask(int id) throws IOException {
         tasks.remove(id);
         TaskJsonWriter.write(tasks, filepath);
     }
 
+    /**
+     * Search and update a Task by id in the list of Tasks.
+     * @param id Id of the Task.
+     * @param description Description of the Task.
+     * @throws IOException Thrown if any problem occur while saving to file.
+     */
     public void updateTask(int id, String description) throws IOException {
         tasks.stream()
                 .filter(t -> t.getId() == id)
@@ -45,6 +61,12 @@ public class TaskHandler {
         TaskJsonWriter.write(tasks, filepath);
     }
 
+    /**
+     * Search and update a Task by id in the list of Tasks.
+     * @param id Id of the Task.
+     * @param status Status of the Task.
+     * @throws IOException Thrown if any problem occur while saving to file.
+     */
     public void updateTask(int id, Status status) throws IOException {
         tasks.stream()
                 .filter(t -> t.getId() == id)
@@ -56,10 +78,17 @@ public class TaskHandler {
         TaskJsonWriter.write(tasks, filepath);
     }
 
+    /**
+     * List all content of the list of Tasks.
+     */
     public void listTasks() {
         tasks.forEach(System.out::println);
     }
 
+    /**
+     * List all Tasks with matching status of {@code status}.
+     * @param status Status of the Task.
+     */
     public void listTasks(Status status) {
         tasks.stream()
                 .filter(t -> t.getStatus().equals(status))
