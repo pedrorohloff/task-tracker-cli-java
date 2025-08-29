@@ -5,6 +5,20 @@ It can save when the task was created and when it was updated, as well as markin
 
 ### How to use it?
 The Task Tracker is a CLI application, meaning that you need to interact with it by using a terminal interface. 
+
+To run the program, compile it by using following command:
+
+````
+cd /src/main/java
+javac Main.java
+````
+
+And then you can use it in the terminal by using the following:
+
+````
+java Main <command>
+````
+
 To use it, you can run the program with one of the following commands:
 - add <description\>
 - update <description\>
