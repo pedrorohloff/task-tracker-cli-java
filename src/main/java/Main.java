@@ -2,6 +2,6 @@ import java.io.IOException;
 
 public class Main {
     public static void main (String[] args) throws IOException {
-        TaskTracker.run(args);
+        TaskTrackerApp.run(args);
     }
 }

@@ -3,7 +3,7 @@ import tasks.TaskHandler;
 
 import java.io.IOException;
 
-public class TaskTracker {
+public class TaskTrackerApp {
     public static void run(String[] args) throws IOException {
         TaskHandler taskHandler = new TaskHandler();
 
